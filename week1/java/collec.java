@@ -1,4 +1,4 @@
-package week1;
+package week1.java;
 public class collec{
     int data[] = new int[5];
     int count;
