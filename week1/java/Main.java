@@ -1,4 +1,5 @@
-package week1;
+package week1.java;
+
 public class Main {
     public static void main(String[] args) {
         collec c = new collec();
