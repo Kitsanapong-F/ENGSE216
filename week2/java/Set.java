@@ -1,4 +1,5 @@
-package week2;
+package week2.java;
+
 
 public class Set {
     int data[] = new int[5];

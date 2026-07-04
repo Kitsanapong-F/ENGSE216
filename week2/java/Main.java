@@ -1,5 +1,5 @@
-package week2;
 
+package week2.java;
 public class Main {
     public static void main(String[] args) {
         List l = new List();

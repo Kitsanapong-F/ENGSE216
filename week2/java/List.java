@@ -1,5 +1,5 @@
-package week2;
 
+package week2.java;
 public class List {
    int data[] = new int[5];
    int count;
@@ -15,7 +15,7 @@ public class List {
         return found;
     }
 
-     boolean isfull(){
+    boolean isfull(){
         return  count == this.data.length;
     }
     boolean isEmpty(){
