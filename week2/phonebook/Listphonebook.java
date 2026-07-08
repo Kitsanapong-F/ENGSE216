@@ -23,12 +23,29 @@ public class Listphonebook {
         }
     }
 
-    void delete(){
-
+    void remove(int inDexremove){
+        if(inDexremove >= 0 && inDexremove < count){
+            for(int i = inDexremove ; i < count-1 ; i++){
+            this.name[i] = this.name[i+1];
+            this.lastName[i] = this.lastName[i+1];
+            this.phoneNumber[i] = this.phoneNumber[i+1];
+        }
+        count--;
+        }
+        else{
+            System.out.println("Error: Index out of bounds");
+        }
     }
 
-    boolean Insert(){
-        return found;
+    void inSert(int inDexinSert, String name){
+       if(!isfull()){
+            if(inDexinSert >= 0 && inDexinSert < count){
+                for(int i = inDexinSert ; i < count+1 ; i++){
+                    this.name[count] = this.name[count+1]; 
+                }
+                count++;
+            }
+       }
     }
 
     void sortData(){
