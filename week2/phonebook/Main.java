@@ -8,8 +8,9 @@ public class Main {
         l.add("kitsanapong1", "chaisu1", "1");
         l.add("kitsanapong2", "chaisu2", "2");
         l.add("kitsanapong3", "chaisu3", "3");
-        l.add("kitsanapong4", "chaisu4", "4");
-        l.remove(3);
+        l.inSert(2, "ff","ss","12");
+        l.editData(1, "dddddd", null, null);
+        l.editDataname(0, "ddd");
         l.showAll();
    }
 }

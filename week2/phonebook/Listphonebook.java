@@ -37,21 +37,58 @@ public class Listphonebook {
         }
     }
 
-    void inSert(int inDexinSert, String name){
+    void inSert(int inDexinSert, String name,String lastName,String phoneNumber){
        if(!isfull()){
-            if(inDexinSert >= 0 && inDexinSert < count){
-                for(int i = inDexinSert ; i < count+1 ; i++){
-                    this.name[count] = this.name[count+1]; 
+            if(inDexinSert >= 0 && inDexinSert <= count){
+                for(int i = count-1 ; i >= inDexinSert ; i--){
+                    this.name[i+1] = this.name[i]; 
+                    this.lastName[i+1] = this.lastName[i];
+                    this.phoneNumber[i+1] = this.phoneNumber[i];
                 }
+                this.name[inDexinSert] = name;
+                this.lastName[inDexinSert] = lastName;
+                this.phoneNumber[inDexinSert] = phoneNumber;
                 count++;
             }
-       }
+             else{
+                System.out.println("Error: Index out of bounds");
+            }
+        }else{
+            System.out.println("Is Full");
+        }
     }
 
     void sortData(){
 
     }
 
+    void editDataname(int inDexedit,String name){
+        if(inDexedit >= 0 && inDexedit< count){
+            if(name != null && !name.isEmpty()){
+                this.name[inDexedit] = name;
+            }
+        }
+    }
+     void editDatalastName(int inDexedit,String lastName){
+        if(inDexedit >= 0 && inDexedit < count){
+            if(lastName != null && !lastName.isEmpty()){
+                this.lastName[inDexedit] = lastName;
+            }
+        }
+    }
+     void editDataphonNumber(int inDexedit,String phone){
+        if(inDexedit >= 0 && inDexedit < count){
+            if(phone != null && !phone.isEmpty()){
+                this.phoneNumber[inDexedit] = phone;
+            }
+        }
+    }
+
+    void editData(int inDexedit,String name ,String lastName,String phone){
+        editDataname(inDexedit,name);
+        editDatalastName(inDexedit, lastName);
+        editDataphonNumber(inDexedit, phone);   
+    }
     void showAll(){
         for(int index = 0 ; index < count; index++){
             System.out.println("No : "+(1 + index)+" Name : "+this.name[index]+" LastName : "+this.lastName[index]+" PhoneNumber : "+this.phoneNumber[index]);
