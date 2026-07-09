@@ -5,7 +5,8 @@ public class Listphonebook {
     String lastName[] = new String[5];
     String phoneNumber[] = new String[5];
     int count = 0;
-    boolean found = false;
+    String nameAndlastName[] = new String[this.name.length];
+    String temp;
 
     boolean isfull(){
         return  count == this.name.length;
@@ -57,9 +58,28 @@ public class Listphonebook {
             System.out.println("Is Full");
         }
     }
+    
+    void bubBlesort(){
+        for(int loop = 0 ; loop < count ; loop++){
+            this.nameAndlastName[loop] =  (this.name[loop].toUpperCase() + this.lastName[loop].toUpperCase());
+        }
+        for(int i = 0 ; i < count-1 ; i++){
+            for(int j = 0 ; j < count-1 ; j++){
+                if(this.nameAndlastName[j].compareTo(this.nameAndlastName[j+1]) > 0){
+                    temp = this.name[j];
+                    this.name[j] = this.name[j+1];
+                    this.name[j+1] = temp;
+                    
+                    temp = this.lastName[j];
+                    this.lastName[j] = this.lastName[j+1];
+                    this.lastName[j+1] = temp;
 
-    void sortData(){
-
+                    temp = this.phoneNumber[j];
+                    this.phoneNumber[j] = this.phoneNumber[j+1];
+                    this.phoneNumber[j+1] = temp;
+                }
+            }
+        }
     }
 
     void editDataname(int inDexedit,String name){
@@ -92,6 +112,12 @@ public class Listphonebook {
     void showAll(){
         for(int index = 0 ; index < count; index++){
             System.out.println("No : "+(1 + index)+" Name : "+this.name[index]+" LastName : "+this.lastName[index]+" PhoneNumber : "+this.phoneNumber[index]);
+        }
+    }
+
+    void showAll1(){
+        for(int index = 0 ; index < count; index++){
+            System.out.println(this.nameAndlastName[index]);
         }
     }
 }
