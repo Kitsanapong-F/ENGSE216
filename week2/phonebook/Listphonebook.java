@@ -60,12 +60,17 @@ public class Listphonebook {
     }
     
     void bubBlesort(){
-        for(int loop = 0 ; loop < count ; loop++){
-            this.nameAndlastName[loop] =  (this.name[loop].toUpperCase() + this.lastName[loop].toUpperCase());
+        for(int index = 0 ; index < count ; index++){
+            this.nameAndlastName[index] =  (this.name[index].toUpperCase() +" "+ this.lastName[index].toUpperCase());
         }
         for(int i = 0 ; i < count-1 ; i++){
             for(int j = 0 ; j < count-1 ; j++){
                 if(this.nameAndlastName[j].compareTo(this.nameAndlastName[j+1]) > 0){
+
+                    temp = this.nameAndlastName[j];
+                    this.nameAndlastName[j] = this.nameAndlastName[j+1];
+                    this.nameAndlastName[j+1] = temp;
+
                     temp = this.name[j];
                     this.name[j] = this.name[j+1];
                     this.name[j+1] = temp;
@@ -111,7 +116,7 @@ public class Listphonebook {
     }
     void showAll(){
         for(int index = 0 ; index < count; index++){
-            System.out.println("No : "+(1 + index)+" Name : "+this.name[index]+" LastName : "+this.lastName[index]+" PhoneNumber : "+this.phoneNumber[index]);
+           System.out.println("No "+(1 + index)+":"+" Name "+this.name[index]+":"+" LastName  "+this.lastName[index]+":"+" PhoneNumber  "+this.phoneNumber[index]);
         }
     }
 
