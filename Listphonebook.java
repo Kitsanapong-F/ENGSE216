@@ -1,4 +1,4 @@
-package week2.phonebook;
+
 
 public class Listphonebook {
     String name[] = new String[5];
