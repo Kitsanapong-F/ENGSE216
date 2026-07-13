@@ -1,12 +1,12 @@
 package week2.phonebook;
 
-public class COMMAND {
-    PHONBOOK pb = new PHONBOOK();
+public class ComMand {
+    PhoneBook pb = new PhoneBook();
 
     public void start() {
         pb.menuAdd();
         pb.menuAdd();
-        pb.menuEdit();
+        pb.sortData();
         pb.showAll();
     }
 }

@@ -1,53 +1,50 @@
 package week2.phonebook;
 
-public class RECORD {
+public class Record {
 
     private String name;
     private String lastName;
     private String phon;
 
-    RECORD(String name, String lastName,String phon){
+    Record(String name, String lastName, String phon) {
         setName(name);
         setLastname(lastName);
         setPhon(phon);
     }
 
-    public void setName(String name){
-        if(name != null && !name.isEmpty()){
+    public void setName(String name) {
+        if (name != null && !name.isEmpty()) {
             this.name = name;
-        }
-        else{
+        } else {
             this.name = "Unknown";
         }
     }
 
-    public void setLastname(String lastName){
-        if(lastName != null && !lastName.isEmpty()){
+    public void setLastname(String lastName) {
+        if (lastName != null && !lastName.isEmpty()) {
             this.lastName = lastName;
-        }
-        else{
+        } else {
             this.lastName = "Unknown";
         }
     }
 
-    public void setPhon(String phon){
-        if(phon != null && !phon.isEmpty()){
+    public void setPhon(String phon) {
+        if (phon != null && !phon.isEmpty()) {
             this.phon = phon;
-        }
-        else{
+        } else {
             this.phon = "Unknown";
         }
     }
 
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 
-    public String getLastname(){
+    public String getLastname() {
         return this.lastName;
     }
 
-    public String getPhon(){
+    public String getPhon() {
         return this.phon;
     }
 }
