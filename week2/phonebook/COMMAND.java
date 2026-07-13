@@ -5,6 +5,8 @@ public class COMMAND {
 
     public void start() {
         pb.menuAdd();
+        pb.menuAdd();
+        pb.menuEdit();
         pb.showAll();
     }
 }
