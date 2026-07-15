@@ -66,12 +66,13 @@ public class PhoneBook {
     }
 
     public String letTer(String letTer) {
-        String input;
-        while (true) {
+        String input = "";
+        boolean condition = true;
+        while (condition) {
             System.out.print(letTer);
             input = scanner.nextLine().trim();
             if (input.matches("^[a-zA-Zก-๏\\s]+$")) {
-                break;
+                condition = false;
             } else {
                 System.out.println("กรอกได้เฉพาะตัวอักษรเท่านั้น (ห้ามใส่ตัวเลขหรือสัญลักษณ์พิเศษ)!");
             }
@@ -80,13 +81,14 @@ public class PhoneBook {
     }
 
     public String phon(String phon) {
-        String input;
-        while (true) {
+        String input = "";
+        boolean condition = true;
+        while (condition) {
             System.out.print(phon);
             input = scanner.nextLine().trim();
 
             if (input.matches("^[0-9]{10,10}$")) {
-                break;
+                condition = false;
             } else {
                 System.out.println("เบอร์โทรต้องเป็นตัวเลข 10 หลักเท่านั้น!");
             }
