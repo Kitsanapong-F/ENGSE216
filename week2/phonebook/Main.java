@@ -1,4 +1,4 @@
- package week2.phonebook;
+package week2.phonebook;
 
 public class Main {
    public static void main(String[] args) {
