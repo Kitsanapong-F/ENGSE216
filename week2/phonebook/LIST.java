@@ -58,7 +58,7 @@ public class List {
 
     public void bubBlesort() {
         for (int inDex = 0; inDex < count - 1; inDex++) {
-            for (int inDexall = 0; inDexall < count - 1; inDexall++) {
+            for (int inDexall = 0; inDexall < count - 1 - inDexall; inDexall++) {
 
                 Record r1 = this.conTact[inDexall];
                 Record r2 = this.conTact[inDexall + 1];
