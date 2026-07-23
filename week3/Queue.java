@@ -28,7 +28,7 @@ public class Queue {
         int data = -1;
         if (!isEmpty()) {
             data = arr[front];
-            front++; // next f
+            front++; 
             queueCount--;
         } else
             System.out.println("The queue is empty.");
