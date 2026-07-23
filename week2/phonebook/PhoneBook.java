@@ -121,10 +121,10 @@ public class PhoneBook {
             System.out.print(massage);
             input = scanner.nextLine().trim();
 
-            if (input.matches("^[0-9]{10,10}$")) {
+            if (input.matches("^[0-9]{10,10}$") && l.searchPhone(input) != true) {
                 condition = false;
             } else {
-                System.out.println("เบอร์โทรต้องเป็นตัวเลข 10 หลักเท่านั้น!");
+                System.out.println("เบอร์โทรต้องเป็นตัวเลข 10 หลักเท่านั้น! และไม่ซ้ำ");
             }
 
         }

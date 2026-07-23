@@ -94,6 +94,17 @@ public class List {
         System.out.println("---------------------------------------------------------");
     }
 
+
+    public boolean searchPhone(String inputTell){
+        boolean found = false;
+        for(int inDex = 0 ; inDex < count ; inDex++){
+            if(this.conTact[inDex].getPhon().equals(inputTell)){
+                found = true;
+            }
+        }
+        return found;
+    }
+
     public boolean isFull() {
         return count == this.conTact.length;
     }
