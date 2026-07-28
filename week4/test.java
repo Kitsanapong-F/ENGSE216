@@ -1,3 +1,4 @@
+package week4;
 public class test {
     public static void main(String[] args) {
         LinkedList ls = new LinkedList();
