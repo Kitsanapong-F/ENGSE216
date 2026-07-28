@@ -8,6 +8,7 @@ public class Queue {
         this(5);
     }
 
+    
     public Queue(int size) {
         this.arr = new int[size];
         this.queueCount = 0;
