@@ -57,23 +57,25 @@ public class List {
     }
 
     public void bubBlesort() {
-        for (int inDex = 0; inDex < count - 1; inDex++) {
-            for (int inDexall = 0; inDexall < count - 1 - inDexall; inDexall++) {
+    for (int inDex = 0; inDex < count - 1; inDex++) {
 
-                Record r1 = this.conTact[inDexall];
-                Record r2 = this.conTact[inDexall + 1];
+        for (int inDexall = 0; inDexall < count - 1 - inDex; inDexall++) {
 
-                String fullName1 = (r1.getName() + " " + r1.getLastname()).toUpperCase();
-                String fullName2 = (r2.getName() + " " + r2.getLastname()).toUpperCase();
+            Record r1 = this.conTact[inDexall];
+            Record r2 = this.conTact[inDexall + 1];
 
-                if (fullName1.compareTo(fullName2) > 0) {
-                    temp = this.conTact[inDexall];
-                    this.conTact[inDexall] = this.conTact[inDexall + 1];
-                    this.conTact[inDexall + 1] = temp;
-                }
+            String fullName1 = (r1.getName() + " " + r1.getLastname()).toUpperCase();
+            String fullName2 = (r2.getName() + " " + r2.getLastname()).toUpperCase();
+
+            if (fullName1.compareTo(fullName2) > 0) {
+
+                Record temp = this.conTact[inDexall];
+                this.conTact[inDexall] = this.conTact[inDexall + 1];
+                this.conTact[inDexall + 1] = temp;
             }
         }
     }
+}
 
     public void showAll() {
         if (count == 0) {

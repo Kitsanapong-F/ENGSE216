@@ -1,64 +1,79 @@
+class List {
+    private int[] elements;
+    private int count; // ตัวแปรเก็บจำนวนข้อมูลปัจจุบัน
 
-package week2.java;
+    // Constructor กำหนดขนาดเริ่มต้น
+    public List(int capacity) {
+        elements = new int[capacity];
+        count = 0;
+    }
 
-public class List {
-    int data[] = new int[5];
-    int count;
-    boolean found = false;
+    // 1. Add() - เพิ่มข้อมูลต่อท้าย
+    public void add(int value) {
+        if (count < elements.length) {
+            elements[count++] = value;
+        } else {
+            System.out.println("ไม่สามารถเพิ่มข้อมูลได้ List เต็มแล้ว");
+        }
+    }
 
-    boolean search(int item) {
+    // 2. Insert() - แทรกข้อมูลลงในตำแหน่ง (Index) ที่กำหนด
+    public void insert(int index, int value) {
+        if (index >= 0 && index <= count && count < elements.length) {
+            // เลื่อนข้อมูลไปทางขวา 1 ตำแหน่งเพื่อแทรกข้อมูลใหม่
+            for (int i = count; i > index; i--) {
+                elements[i] = elements[i - 1];
+            }
+            elements[index] = value;
+            count++;
+        }
+    }
+
+    // 3. Search() - ค้นหาข้อมูล (คืนค่าตำแหน่ง Index ที่เจอ, ถ้าไม่เจอคืนค่า -1)
+    public int search(int value) {
         for (int i = 0; i < count; i++) {
-            if (data[i] == item) {
-                i = count;
-                found = true;
+            if (elements[i] == value) {
+                return i; // พบข้อมูล
             }
         }
-        return found;
+        return -1; // ไม่พบข้อมูล
     }
 
-    boolean isfull() {
-        return count == this.data.length;
-    }
-
-    boolean isEmpty() {
-        return count == 0;
-    }
-
-    void showall() {
-        for (int i = 0; i < count; i++) {
-            System.out.println(this.data[i]);
-        }
-    }
-
-    int size() {
-        return count;
-    }
-
-    void add(int data) {
-        if (!isfull()) {
-            this.data[count] = data;
-            count++;
+    // 4. deletion() - ลบข้อมูลที่ระบุ
+    public void deletion(int value) {
+        int index = search(value); // หาตำแหน่งก่อน
+        if (index != -1) {
+            // เลื่อนข้อมูลทางขวากลับมาทับตำแหน่งที่ลบ
+            for (int i = index; i < count - 1; i++) {
+                elements[i] = elements[i + 1];
+            }
+            count--; // ลดจำนวนข้อมูลลง
         } else {
-            System.out.println("isFull.");
+            System.out.println("ไม่พบข้อมูลที่ต้องการลบ");
         }
     }
 
-    void delete(int idex) {
-        for (int i = idex; i < count - 1; i++) {
-            data[i] = data[i + 1];
+    // 5. Traversal() - ท่องไปในโครงสร้างเพื่อแสดงผลข้อมูลทั้งหมด
+    public void traversal() {
+        System.out.print("ข้อมูลใน List: ");
+        for (int i = 0; i < count; i++) {
+            System.out.print(elements[i] + " ");
         }
-        count--;
+        System.out.println();
     }
 
-    void insert(int index, int item) {
-        if (!isfull()) {
-            if (index < count && index >= 0) {
-                for (int i = count - 1; i >= index; i--) {
-                    data[i + 1] = data[i];
+    // 6. Sorting() - เรียงลำดับข้อมูล (ใช้ Bubble Sort เบื้องต้น)
+    public void sorting() {
+        for (int i = 0; i < count - 1; i++) {
+            for (int j = 0; j < count - 1 - i; j++) {
+                if (elements[j] > elements[j + 1]) {
+                    // สลับค่า
+                    int temp = elements[j];
+                    elements[j] = elements[j + 1];
+                    elements[j + 1] = temp;
                 }
             }
-            data[index] = item;
-            count++;
         }
+        System.out.println("เรียงลำดับข้อมูลเรียบร้อยแล้ว");
     }
 }
