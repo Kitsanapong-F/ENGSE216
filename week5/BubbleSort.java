@@ -1,10 +1,6 @@
 package week5;
 
-/**
- * Bubble Sort Algorithm
- * Time Complexity: O(n^2)
- * Space Complexity: O(1)
- */
+
 public class BubbleSort implements SortingAlgorithm {
 
     @Override
@@ -22,7 +18,6 @@ public class BubbleSort implements SortingAlgorithm {
                     swapped = true;
                 }
             }
-            // ถ้าไม่มีการสลับตำแหน่งเลย แสดงว่าข้อมูลเรียงลำดับเรียบร้อยแล้ว
             if (!swapped) break;
         }
     }

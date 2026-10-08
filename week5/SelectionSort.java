@@ -1,10 +1,5 @@
 package week5;
 
-/**
- * Selection Sort Algorithm
- * Time Complexity: O(n^2)
- * Space Complexity: O(1)
- */
 public class SelectionSort implements SortingAlgorithm {
 
     @Override

@@ -1,10 +1,5 @@
 package week5;
 
-/**
- * Quick Sort Algorithm
- * Time Complexity: O(n log n) (Worst Case: O(n^2))
- * Space Complexity: O(log n)
- */
 public class QuickSort implements SortingAlgorithm {
 
     @Override
@@ -22,11 +17,11 @@ public class QuickSort implements SortingAlgorithm {
     }
 
     private int partition(int[] array, int low, int high) {
-        // เลือก pivot จากตำแหน่งตรงกลางเพื่อลดโอกาสเกิด Worst Case
+
         int mid = low + (high - low) / 2;
         int pivot = array[mid];
 
-        // สลับ pivot ไปไว้ที่ตำแหน่ง high ชั่วคราว
+
         swap(array, mid, high);
 
         int i = low - 1;
@@ -36,7 +31,7 @@ public class QuickSort implements SortingAlgorithm {
                 swap(array, i, j);
             }
         }
-        // สลับ pivot กลับมาไว้ที่ตำแหน่งที่ถูกต้อง (i + 1)
+
         swap(array, i + 1, high);
         return i + 1;
     }
